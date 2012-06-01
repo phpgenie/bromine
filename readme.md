@@ -26,7 +26,7 @@ Appends the string to the end of the title, using `:` as a separator.
 
 ~~~
 $title = $article->title;
-Bromine::append($title, ' &middot; ');
+Bromine\Title::append($title, ' &middot; ');
 ~~~
 
 #### set($string, $title_overwrite = false)
