@@ -47,15 +47,15 @@ Bromine\Title::set($title, true);
 
 Returns a View object of the model or an array of the menu. The menu is stored in a table.
 
-#### view($active = 0)
+#### view($parent = 0, $active = 0)
 
-Returns a View object of the view, found in views/menu.php. First paramter is the ID of the active page, which will set the `<li>` to `<li class="active">` for that entity.
+Returns a View object of the view, found in views/menu.php. Optionally ask for only the children of a parent. Second parameter is the ID of the active page, which will set the `<li>` to `<li class="active">` for that entity.
 
 ~~~
 $this-template->menu = Bromine\Menu::view();
 
 // Or with an active page ‘active’
-$this-template->menu = Bromine\Menu::view($page->id);
+$this-template->menu = Bromine\Menu::view($page->parent, $page->id);
 ~~~
 
 #### raw($parent = 0)
