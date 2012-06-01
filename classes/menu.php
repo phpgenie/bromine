@@ -38,7 +38,7 @@ class Menu
 		}
 		catch (\CacheNotFoundException $e)
 		{
-			$menu = self::raw($parent);
+			$menu = self::get($parent);
 			$view = \View::forge('menu');
 			\Cache::set('bromine.menu', $view);
 			return $view;
@@ -54,7 +54,7 @@ class Menu
 	 * @param	int		$parent	The ID of the parent item
 	 * @return	array
 	 */
-	public static function raw($parent = 0)
+	public static function get($parent = 0)
 	{
 		return array();
 	}

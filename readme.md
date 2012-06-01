@@ -58,10 +58,10 @@ $this-template->menu = Bromine\Menu::view();
 $this-template->menu = Bromine\Menu::view($page->parent, $page->id);
 ~~~
 
-#### raw($parent = 0)
+#### get($parent = 0)
 
 Returns a multidimensional array of the menu. Optionally ask for only the children of a parent. 
 
 ~~~
-$this->template->menu = Bromine\Menu::raw();
+$this->template->menu = Bromine\Menu::get();
 ~~~
