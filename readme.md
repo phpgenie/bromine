@@ -2,9 +2,9 @@
 
 A CMS package for FuelPHP.
 
-## API
+## Public API
 
-The methods that Bromine provides for the API to be used on the front-end of the site.
+The methods that Bromine provides for the API to be used on the front-end of the site in public controllers.
 
 ### Title
 
@@ -41,4 +41,27 @@ Bromine\Title::set($title);
 $title = 'Article: '.$article->title;
 Bromine\Title::set($title, true);
 // Article: The leaves are falling
+~~~
+
+### Menu
+
+Returns a View object of the model or an array of the menu. The menu is stored in a table.
+
+#### view($active = 0)
+
+Returns a View object of the view, found in views/menu.php. First paramter is the ID of the active page, which will set the `<li>` to `<li class="active">` for that entity.
+
+~~~
+$this-template->menu = Bromine\Menu::view();
+
+// Or with an active page ‘active’
+$this-template->menu = Bromine\Menu::view($page->id);
+~~~
+
+#### raw($parent = 0)
+
+Returns a multidimensional array of the view. Optionally ask for only the children of a parent. 
+
+~~~
+$this->template->menu = Bromine\Menu::raw();
 ~~~
