@@ -8,24 +8,37 @@ The methods that Bromine provides for the API to be used on the front-end of the
 
 ### Title
 
-#### Get title
+Prepends the site’s name and anything added.
+
+#### get()
+
+Returns the the title as a string.
 
 ~~~
-Bromine::title()
+<head>
+	<title><?php echo Bromine\Title::get(); ?></title>
+</head>
 ~~~
 
-Returns the copy for the HTML Title tag as a string.
+#### append($string, $separator = ': ')
 
-#### Set title
+Appends the string to the end of the title, using `:` as a separator.
 
 ~~~
-Bromine::title($string)
+$title = $article->title;
+Bromine::append($title, ' &middot; ');
 ~~~
 
-Appends the string to the end of the title, using `:` as a separator. Will prepend the title of the site at the beginning.
+#### set($string, $title_overwrite = false)
 
-#### Other options
+Overwrites the existing title, but includes the site title unless `$title_overwrite` is set to true.
 
-```Bromine::title($string, true)``` the second argument overwrites the entire title string.
+~~~
+$title = $article->title;
+Bromine\Title::set($title);
+// Site Name: The leaves are falling
 
-```Bromine::title($string, false, ': ')``` the third argument sets the separator.
+$title = 'Article: '.$article->title;
+Bromine\Title::set($title, true);
+// Article: The leaves are falling
+~~~
