@@ -1,6 +1,6 @@
 # Bromine
 
-A CMS package for FuelPHP.
+A CMS [module](http://docs.fuelphp.com/general/modules.html) for FuelPHP.
 
 ## Public API
 
@@ -60,7 +60,7 @@ $this-template->menu = Bromine\Menu::view($page->parent, $page->id);
 
 #### raw($parent = 0)
 
-Returns a multidimensional array of the view. Optionally ask for only the children of a parent. 
+Returns a multidimensional array of the menu. Optionally ask for only the children of a parent. 
 
 ~~~
 $this->template->menu = Bromine\Menu::raw();
