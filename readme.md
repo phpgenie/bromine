@@ -6,6 +6,18 @@ A CMS [module](http://docs.fuelphp.com/general/modules.html) for FuelPHP.
 
 The methods that Bromine provides for the API to be used on the front-end of the site in public controllers.
 
+### Blocks
+
+Return, modify and save blocks – bits of pages that can be edited by users. It might be part of the footer or a message on the contact page. Blocks are written in Markdown and rendered and cached on request.
+
+#### get($block)
+
+Returns a block as a string. The `$block` variable is the URI of the block.
+
+~~~
+<?php echo Bromine\Block::get('contact-thanks'); ?>
+~~~
+
 ### Title
 
 Prepends the site’s name and anything added.
